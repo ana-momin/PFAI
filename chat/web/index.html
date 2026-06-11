@@ -1,25 +1,25 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signal Room — Real-time Chat</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="noise"></div>
+<html lang="en"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07110f">
+  <title>Signal Room | Live Go Chat</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307110f'/%3E%3Cpath d='M17 38c11 7 25 4 30-12M17 29c8 5 17 3 21-7' fill='none' stroke='%23d8ff72' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+</head><body>
+  <div class="noise"></div><div class="pulse-field"><i></i><i></i><i></i></div>
   <main class="shell">
-    <header><a class="brand" href="#"><span class="mark">S</span><span>signal room<small>live websocket space</small></span></a><div class="status"><i></i><span id="status">connecting</span></div></header>
+    <header><a class="brand" href="/"><span class="mark">S</span><span>SIGNAL ROOM<small>GORILLA WEBSOCKET / LIVE</small></span></a><div class="header-center">7.1 / REALTIME SYSTEM</div><div class="status"><i></i><span id="status">connecting</span></div></header>
     <section class="chat">
-      <aside><div><p class="eyebrow">THE LOBBY</p><h1>Make some<br><em>noise.</em></h1><p class="lede">A tiny room for big thoughts. Every message travels through a Go WebSocket hub.</p></div><div><p class="eyebrow">IN THE ROOM · <span id="count">0</span></p><div id="people" class="people"></div></div></aside>
+      <aside>
+        <div><p class="eyebrow">OPEN FREQUENCY</p><h1>Speak.<br><em>Be heard.</em></h1><p class="lede">A persistent room powered by Go channels. Every signal is broadcast in real time.</p></div>
+        <div class="signal-viz"><span></span><span></span><span></span><span></span><span></span></div>
+        <div><p class="eyebrow">PRESENCE / <span id="count">0</span> CONNECTED</p><div id="people" class="people"></div></div>
+      </aside>
       <section class="room">
-        <div id="messages" class="messages"><div class="date"><span>right now</span></div></div>
-        <form id="composer"><textarea id="input" rows="1" maxlength="500" placeholder="Say something worth sending..." required></textarea><button aria-label="Send message"><span>Send</span>↗</button></form>
+        <div class="room-head"><span>PUBLIC CHANNEL / GENERAL</span><b><i></i> ENCRYPTED TRANSPORT</b></div>
+        <div id="messages" class="messages"><div class="date"><span>Transmission begins now</span></div></div>
+        <form id="composer"><div class="compose-mark">+</div><textarea id="input" rows="1" maxlength="500" placeholder="Transmit a message..." required></textarea><span class="keys">ENTER</span><button aria-label="Send message">SEND <b>↗</b></button></form>
       </section>
     </section>
   </main>
-  <dialog id="welcome"><form method="dialog"><span class="mark">S</span><p class="eyebrow">WELCOME TO SIGNAL</p><h2>What should we call you?</h2><input id="name" maxlength="24" autocomplete="name" placeholder="Your name" required><button id="enter" value="default">Enter the room ↗</button></form></dialog>
+  <dialog id="welcome"><form method="dialog"><div class="modal-orbit"><span class="mark">S</span></div><p class="eyebrow">IDENTIFY YOUR SIGNAL</p><h2>Enter the<br><em>frequency.</em></h2><label>DISPLAY NAME<input id="name" maxlength="24" autocomplete="name" placeholder="Your name" required></label><button id="enter" value="default">JOIN THE ROOM <span>↗</span></button><small>Messages travel through a live Go WebSocket server.</small></form></dialog>
   <script src="app.js"></script>
-</body>
-</html>
+</body></html>
