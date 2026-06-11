@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: pfai-signal-chat
+    runtime: go
+    plan: free
+    rootDir: chat
+    buildCommand: go build -o app .
+    startCommand: ./app
+    healthCheckPath: /api/health

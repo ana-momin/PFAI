@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Room — Real-time Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="shell">
+    <header><a class="brand" href="#"><span class="mark">S</span><span>signal room<small>live websocket space</small></span></a><div class="status"><i></i><span id="status">connecting</span></div></header>
+    <section class="chat">
+      <aside><div><p class="eyebrow">THE LOBBY</p><h1>Make some<br><em>noise.</em></h1><p class="lede">A tiny room for big thoughts. Every message travels through a Go WebSocket hub.</p></div><div><p class="eyebrow">IN THE ROOM · <span id="count">0</span></p><div id="people" class="people"></div></div></aside>
+      <section class="room">
+        <div id="messages" class="messages"><div class="date"><span>right now</span></div></div>
+        <form id="composer"><textarea id="input" rows="1" maxlength="500" placeholder="Say something worth sending..." required></textarea><button aria-label="Send message"><span>Send</span>↗</button></form>
+      </section>
+    </section>
+  </main>
+  <dialog id="welcome"><form method="dialog"><span class="mark">S</span><p class="eyebrow">WELCOME TO SIGNAL</p><h2>What should we call you?</h2><input id="name" maxlength="24" autocomplete="name" placeholder="Your name" required><button id="enter" value="default">Enter the room ↗</button></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+*.exe
+*.test
+*.log
+.vercel
+.env
+.DS_Store
