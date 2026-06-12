@@ -1,25 +1,74 @@
 <!doctype html>
-<html lang="en"><head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07110f">
-  <title>Signal Room | Live Go Chat</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307110f'/%3E%3Cpath d='M17 38c11 7 25 4 30-12M17 29c8 5 17 3 21-7' fill='none' stroke='%23d8ff72' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
-</head><body>
-  <div class="noise"></div><div class="pulse-field"><i></i><i></i><i></i></div>
-  <main class="shell">
-    <header><a class="brand" href="/"><span class="mark">S</span><span>SIGNAL ROOM<small>GORILLA WEBSOCKET / LIVE</small></span></a><div class="header-center">7.1 / REALTIME SYSTEM</div><div class="status"><i></i><span id="status">connecting</span></div></header>
-    <section class="chat">
-      <aside>
-        <div><p class="eyebrow">OPEN FREQUENCY</p><h1>Speak.<br><em>Be heard.</em></h1><p class="lede">A persistent room powered by Go channels. Every signal is broadcast in real time.</p></div>
-        <div class="signal-viz"><span></span><span></span><span></span><span></span><span></span></div>
-        <div><p class="eyebrow">PRESENCE / <span id="count">0</span> CONNECTED</p><div id="people" class="people"></div></div>
-      </aside>
-      <section class="room">
-        <div class="room-head"><span>PUBLIC CHANNEL / GENERAL</span><b><i></i> ENCRYPTED TRANSPORT</b></div>
-        <div id="messages" class="messages"><div class="date"><span>Transmission begins now</span></div></div>
-        <form id="composer"><div class="compose-mark">+</div><textarea id="input" rows="1" maxlength="500" placeholder="Transmit a message..." required></textarea><span class="keys">ENTER</span><button aria-label="Send message">SEND <b>↗</b></button></form>
-      </section>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f7f5">
+  <meta name="description" content="Signal Room is a live multi-user chat powered by Go, Gorilla WebSocket, and goroutines.">
+  <title>Signal Room | Live Go Chat</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231c6b50'/%3E%3Cpath d='M18 39c11 7 24 3 29-12M18 29c8 5 17 3 21-7' fill='none' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">
+      <span class="mark">S</span>
+      <span><strong>Signal Room</strong><small>LIVE GO CHAT</small></span>
+    </a>
+    <div class="header-note">WebSocket communication, made visible.</div>
+    <div class="status"><i></i><span id="status">Connecting</span></div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <div>
+        <p class="eyebrow">PROJECT 7.1 / REALTIME CHAT</p>
+        <h1>A room that stays <em>in sync.</em></h1>
+        <p class="intro">Messages travel through a persistent Go WebSocket server and broadcast instantly to every connected person.</p>
+      </div>
+
+      <div class="system-card">
+        <div class="system-card-head"><span>System overview</span><i></i></div>
+        <div class="metric"><strong id="count">0</strong><span>people connected</span></div>
+        <div class="tech-list"><span>Gorilla WebSocket</span><span>Go channels</span><span>Goroutines</span></div>
+      </div>
+
+      <div class="presence">
+        <p class="eyebrow">IN THE ROOM</p>
+        <div id="people" class="people"><span class="empty-person">Waiting for presence...</span></div>
+      </div>
+    </aside>
+
+    <section class="room">
+      <div class="room-head">
+        <div><p class="eyebrow">PUBLIC CHANNEL</p><h2>General conversation</h2></div>
+        <span class="transport"><i></i> Encrypted transport</span>
+      </div>
+      <div id="messages" class="messages">
+        <div class="welcome-line"><span>Conversation begins here</span></div>
+        <div class="empty-state" id="empty-state"><span>01</span><h3>Say hello to the room.</h3><p>Your message will appear here and on every other connected screen.</p></div>
+      </div>
+      <form id="composer">
+        <textarea id="input" rows="1" maxlength="500" placeholder="Write a message to everyone..." required></textarea>
+        <div class="compose-actions"><span><b id="char-count">0</b>/500 · Enter to send</span><button aria-label="Send message">Send message <b>↑</b></button></div>
+      </form>
     </section>
   </main>
-  <dialog id="welcome"><form method="dialog"><div class="modal-orbit"><span class="mark">S</span></div><p class="eyebrow">IDENTIFY YOUR SIGNAL</p><h2>Enter the<br><em>frequency.</em></h2><label>DISPLAY NAME<input id="name" maxlength="24" autocomplete="name" placeholder="Your name" required></label><button id="enter" value="default">JOIN THE ROOM <span>↗</span></button><small>Messages travel through a live Go WebSocket server.</small></form></dialog>
+
+  <dialog id="welcome">
+    <form method="dialog">
+      <div class="dialog-top"><span class="mark">S</span><span class="live-pill"><i></i> Room is live</span></div>
+      <p class="eyebrow">WELCOME TO SIGNAL ROOM</p>
+      <h2>Choose how people will <em>see you.</em></h2>
+      <p class="dialog-copy">Join a shared public conversation powered by a real Go WebSocket server.</p>
+      <label>Display name<input id="name" maxlength="24" autocomplete="name" placeholder="Enter your name" required></label>
+      <button id="enter" value="default">Join the conversation <span>→</span></button>
+      <small>No account required. Your display name is stored only in this browser.</small>
+    </form>
+  </dialog>
   <script src="app.js"></script>
-</body></html>
+</body>
+</html>
