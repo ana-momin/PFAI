@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab Manual 12 - Go Projects - Muhammad Anas</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #17231d; background: #eef3ef; font-family: Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .page { position: relative; width: 210mm; height: 297mm; padding: 18mm; overflow: hidden; page-break-after: always; background: #fbfcfa; }
+    .page:last-child { page-break-after: auto; }
+    .top-line { position: absolute; inset: 0 0 auto; height: 7px; background: #176b50; }
+    .page-no { position: absolute; right: 18mm; bottom: 12mm; color: #718078; font-size: 9px; }
+    .tag { margin: 0; color: #176b50; font-size: 9px; font-weight: bold; letter-spacing: 1.6px; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 8mm; font-size: 35px; line-height: 1.05; letter-spacing: -1.8px; }
+    h2 { margin: 3mm 0 2mm; font-size: 27px; letter-spacing: -1.2px; }
+    h3 { margin-bottom: 2mm; font-size: 13px; }
+    p, li { color: #526158; font-size: 11px; line-height: 1.65; }
+    .cover { background: linear-gradient(145deg, #fbfcfa 62%, #e3f0e8); }
+    .cover-logo { width: 40mm; height: 40mm; margin-bottom: 11mm; object-fit: contain; }
+    .cover h1 { max-width: 145mm; margin: 6mm 0 5mm; font-size: 48px; }
+    .cover .lead { max-width: 130mm; margin-bottom: 13mm; font-size: 14px; }
+    .course { margin-top: 8mm; padding: 7mm; border: 1px solid #cbdcd2; border-radius: 5mm; background: #ffffffcc; }
+    .course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm 8mm; }
+    .field span { display: block; margin-bottom: 1.5mm; color: #718078; font-size: 8px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+    .field b { font-size: 11px; }
+    .student { margin-top: 8mm; display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+    .student div { padding-top: 4mm; border-top: 1px solid #b9cdc1; }
+    .student span { color: #718078; font-size: 8px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+    .student b { display: block; margin-top: 2mm; font-size: 13px; }
+    .cover-foot { position: absolute; left: 18mm; bottom: 15mm; color: #526158; font-size: 9px; }
+    .project-head { display: flex; justify-content: space-between; align-items: start; gap: 10mm; }
+    .number { width: 15mm; height: 15mm; display: grid; place-items: center; border-radius: 50%; color: white; background: #176b50; font-size: 11px; font-weight: bold; }
+    .project-intro { max-width: 145mm; margin-bottom: 6mm; font-size: 12px; }
+    .shot { width: 100%; height: 111mm; object-fit: cover; object-position: top; border: 1px solid #d5e0da; border-radius: 4mm; box-shadow: 0 4mm 12mm #243d3014; }
+    .details { margin-top: 7mm; display: grid; grid-template-columns: 1.25fr .75fr; gap: 8mm; }
+    .points { margin: 0; padding-left: 5mm; }
+    .points li { margin-bottom: 1.5mm; }
+    .link-box { padding: 5mm; border-radius: 4mm; background: #e1f1e9; }
+    .link-box span { display: block; margin-bottom: 2mm; color: #176b50; font-size: 8px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+    .link-box a { color: #125b43; font-size: 10px; font-weight: bold; word-break: break-all; text-decoration: underline; }
+    .stack { margin-top: 4mm; color: #526158; font-size: 9px; }
+    .orange .top-line, .orange .number { background: #dc5b3e; }
+    .orange .tag, .orange .link-box span { color: #b7462d; }
+    .orange .link-box { background: #f7e7df; }
+    .orange .link-box a { color: #9e3924; }
+    .blue .top-line, .blue .number { background: #416ec4; }
+    .blue .tag, .blue .link-box span { color: #315da9; }
+    .blue .link-box { background: #e5edfb; }
+    .blue .link-box a { color: #274d95; }
+  </style>
+</head>
+<body>
+  <section class="page cover">
+    <div class="top-line"></div>
+    <img class="cover-logo" src="assets/nutech-logo.png" alt="NUTECH logo">
+    <p class="tag">National University of Technology · Artificial Intelligence Department</p>
+    <h1>Lab Manual 12:<br>Go Projects</h1>
+    <p class="lead">A short report on three working Go applications: a live chat room, a secure task API, and a concurrent web crawler.</p>
+
+    <div class="course">
+      <div class="course-grid">
+        <div class="field"><span>Course title</span><b>Programming for AI</b></div>
+        <div class="field"><span>Course code</span><b>CS-282</b></div>
+        <div class="field"><span>Batch</span><b>AI-24 (B)</b></div>
+        <div class="field"><span>Semester</span><b>Fall 2024</b></div>
+        <div class="field"><span>Faculty member</span><b>Lec. Umer Aftab</b></div>
+        <div class="field"><span>Submission date</span><b>13 June, 2026</b></div>
+      </div>
+    </div>
+
+    <div class="student">
+      <div><span>Student name</span><b>Muhammad Anas</b></div>
+      <div><span>Student ID</span><b>F24607058</b></div>
+    </div>
+    <div class="cover-foot">All projects are functional and available online.</div>
+    <div class="page-no">01</div>
+  </section>
+
+  <section class="page">
+    <div class="top-line"></div>
+    <div class="project-head"><div><p class="tag">Project 7.1 · Real-Time Chat Application</p><h2>Signal Room</h2></div><div class="number">01</div></div>
+    <p class="project-intro">Signal Room is a public chat application. People choose a display name and send messages that appear instantly for everyone in the room.</p>
+    <img class="shot" src="assets/signal-room.png" alt="Signal Room screenshot">
+    <div class="details">
+      <div>
+        <h3>What I built</h3>
+        <ul class="points">
+          <li>A live WebSocket connection using Gorilla WebSocket.</li>
+          <li>A Go hub that broadcasts messages and shows connected users.</li>
+          <li>Automatic reconnect, message history, and a responsive interface.</li>
+        </ul>
+        <p class="stack"><b>Tools:</b> Go, Gorilla WebSocket, goroutines, channels, HTML, CSS, JavaScript</p>
+      </div>
+      <div class="link-box"><span>Live project</span><a href="https://pfai-signal-chat.onrender.com">pfai-signal-chat.onrender.com</a></div>
+    </div>
+    <div class="page-no">02</div>
+  </section>
+
+  <section class="page orange">
+    <div class="top-line"></div>
+    <div class="project-head"><div><p class="tag">Project 7.2 · REST API with JWT Auth</p><h2>Keyline Workspace</h2></div><div class="number">02</div></div>
+    <p class="project-intro">Keyline is a private task workspace. A user can create an account, sign in, and manage personal tasks through protected API routes.</p>
+    <img class="shot" src="assets/keyline.png" alt="Keyline Workspace screenshot">
+    <div class="details">
+      <div>
+        <h3>What I built</h3>
+        <ul class="points">
+          <li>Registration and login with passwords protected by bcrypt.</li>
+          <li>JWT middleware that checks access before opening private routes.</li>
+          <li>Task creation, completion, listing, and deletion for each user.</li>
+        </ul>
+        <p class="stack"><b>Tools:</b> Go, Gin, JWT, bcrypt, REST API, HTML, CSS, JavaScript</p>
+      </div>
+      <div class="link-box"><span>Live project</span><a href="https://pfai-keyline.vercel.app">pfai-keyline.vercel.app</a></div>
+    </div>
+    <div class="page-no">03</div>
+  </section>
+
+  <section class="page blue">
+    <div class="top-line"></div>
+    <div class="project-head"><div><p class="tag">Project 7.3 · Concurrent Web Crawler</p><h2>Orbit Crawler</h2></div><div class="number">03</div></div>
+    <p class="project-intro">Orbit explores a public website and returns a simple report of its pages, links, status codes, and response times.</p>
+    <img class="shot" src="assets/orbit.png" alt="Orbit Crawler screenshot">
+    <div class="details">
+      <div>
+        <h3>What I built</h3>
+        <ul class="points">
+          <li>A worker pool that crawls several pages at the same time.</li>
+          <li>Rate limiting, timeouts, and safety checks for network requests.</li>
+          <li>A clear report showing discovered pages and crawl results.</li>
+        </ul>
+        <p class="stack"><b>Tools:</b> Go, goroutines, worker pool, token-bucket rate limiting, HTML parser</p>
+      </div>
+      <div class="link-box"><span>Live project</span><a href="https://pfai-orbit.vercel.app">pfai-orbit.vercel.app</a></div>
+    </div>
+    <div class="page-no">04</div>
+  </section>
+</body>
+</html>
