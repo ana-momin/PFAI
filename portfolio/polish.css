@@ -1,0 +1,36 @@
+body {
+  overflow-x: hidden;
+}
+
+.hero-text,
+.section-heading > p,
+.project-content > p:not(.project-kicker),
+.about-card > div > p:not(.eyebrow) {
+  color: #46534c;
+}
+
+@media (max-width: 850px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 13vw;
+  }
+
+  .hero-copy,
+  .hero-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-visual {
+    overflow: hidden;
+  }
+}

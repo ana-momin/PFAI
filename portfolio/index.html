@@ -3,141 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07110f">
-  <meta name="description" content="Anas presents three advanced Go systems built at NUTECH: realtime chat, secure JWT APIs, and concurrent crawling.">
-  <meta property="og:title" content="Anas | Advanced Go Systems">
-  <meta property="og:description" content="Three production-minded Go systems. Designed and engineered at NUTECH.">
-  <title>Anas | Advanced Go Systems</title>
+  <meta name="theme-color" content="#f7f8f4">
+  <meta name="description" content="Anas presents three functional Advanced Go projects built at NUTECH.">
+  <meta property="og:title" content="Anas | Advanced Go Projects">
+  <meta property="og:description" content="Realtime chat, secure JWT APIs, and concurrent web crawling built with Go.">
+  <title>Anas | Advanced Go Projects</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="polish.css">
 </head>
 <body>
-  <div class="noise"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"><span>VIEW</span></div>
   <div class="progress"></div>
-
   <header>
-    <a class="brand magnetic" href="#top" aria-label="Anas Go Systems home">
-      <span class="brand-mark">A</span>
-      <span>ANAS<small>GO SYSTEMS</small></span>
-    </a>
-    <nav>
-      <a href="#work">WORK</a>
-      <a href="#profile">PROFILE</a>
-      <a href="https://github.com/ana-momin/PFAI" target="_blank">SOURCE</a>
-    </nav>
-    <div class="availability"><i></i> ALL SYSTEMS LIVE</div>
+    <a class="brand" href="#top"><span>A</span><strong>Anas</strong><small>GO DEVELOPER</small></a>
+    <nav><a href="#projects">Projects</a><a href="#about">About</a><a href="https://github.com/ana-momin/PFAI" target="_blank">GitHub ↗</a></nav>
+    <a class="header-cta" href="#projects">View projects</a>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-grid"></div>
-      <div class="hero-copy">
-        <p class="eyebrow reveal">ADVANCED GO PRACTICE <span>2026</span></p>
-        <h1 class="reveal"><span>Systems</span><em>in motion.</em></h1>
-        <div class="hero-meta reveal">
-          <p>Realtime. Secure. Concurrent.</p>
-          <a class="magnetic" href="#work">Explore systems <b>↓</b></a>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> ADVANCED GO PRACTICE · 2026</p>
+        <h1>Building systems<br>that <em>actually work.</em></h1>
+        <p class="hero-text">Three complete Go applications exploring realtime communication, secure authentication, and concurrent web processing.</p>
+        <div class="hero-actions"><a class="button primary" href="#projects">Explore projects <span>↓</span></a><a class="button secondary" href="https://github.com/ana-momin/PFAI" target="_blank">View source ↗</a></div>
+        <div class="hero-stats"><div><b>03</b><span>Live projects</span></div><div><b>Go</b><span>Core language</span></div><div><b>100%</b><span>Functional</span></div></div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="code-card">
+          <div class="card-bar"><i></i><i></i><i></i><span>main.go</span></div>
+          <pre><code><span>func</span> main() {
+  hub := NewHub()
+  <b>go</b> hub.Run()
+
+  router.GET(<em>"/ws"</em>, serveChat)
+  router.Run(<em>":8080"</em>)
+}</code></pre>
         </div>
-      </div>
-      <div class="core" data-parallax="0.08">
-        <div class="core-orbit orbit-a"><i></i></div>
-        <div class="core-orbit orbit-b"><i></i></div>
-        <div class="core-orbit orbit-c"><i></i></div>
-        <div class="core-center"><span>GO</span><small>03 / SYSTEMS</small></div>
-        <div class="core-label label-a">WEBSOCKET</div>
-        <div class="core-label label-b">JWT AUTH</div>
-        <div class="core-label label-c">GOROUTINES</div>
-      </div>
-      <div class="hero-index"><span>01</span><div><i></i></div><span>04</span></div>
-      <div class="scroll-note">SCROLL TO ENTER <i></i></div>
-    </section>
-
-    <section class="manifesto">
-      <p class="eyebrow reveal">THE BRIEF</p>
-      <h2 class="reveal">Three ideas.<br>Built until they <em>worked.</em></h2>
-      <div class="manifesto-stats reveal">
-        <div><b>03</b><span>Live systems</span></div>
-        <div><b>100%</b><span>Functional</span></div>
-        <div><b>GO</b><span>Core language</span></div>
+        <div class="orbit"><div>GO<small>3 SYSTEMS</small></div><i></i><i></i><i></i></div>
+        <div class="floating-note note-one"><b>●</b> All systems live</div>
+        <div class="floating-note note-two">Built at NUTECH</div>
       </div>
     </section>
 
-    <section id="work" class="work">
-      <div class="work-head reveal"><p class="eyebrow">SELECTED SYSTEMS</p><span>INTERACT TO EXPLORE</span></div>
+    <section class="intro-strip">
+      <span>WEBSOCKETS</span><i></i><span>JWT AUTH</span><i></i><span>GOROUTINES</span><i></i><span>CONCURRENCY</span><i></i><span>GIN</span>
+    </section>
 
-      <a class="project project-signal reveal-project" data-cursor="OPEN" data-app="chat" href="https://pfai-signal-chat.onrender.com" target="_blank">
-        <div class="project-bg"></div>
-        <div class="project-top"><span>7.1 / REALTIME</span><span><i></i> LIVE ON RENDER</span></div>
-        <div class="project-title"><small>GORILLA WEBSOCKET</small><h3>SIGNAL<br><em>ROOM</em></h3></div>
-        <div class="signal-stage" data-depth>
-          <div class="signal-window">
-            <div class="window-bar"><span><i></i> SIGNAL ROOM</span><b>3 ONLINE</b></div>
-            <div class="chat-line one"><i>AN</i><span>Connections should feel instant.</span></div>
-            <div class="chat-line two"><i>GO</i><span>Channels keep everyone in sync.</span></div>
-            <div class="typing"><span></span><span></span><span></span></div>
+    <section id="projects" class="projects">
+      <div class="section-heading reveal"><div><p class="eyebrow"><span></span> FEATURED WORK</p><h2>Projects designed to be<br><em>used, not just viewed.</em></h2></div><p>Each project combines a real Go backend with a responsive interface and production deployment.</p></div>
+
+      <article class="project-card signal reveal">
+        <div class="project-content">
+          <div class="project-meta"><span>01 / REALTIME SYSTEM</span><b><i></i> LIVE</b></div>
+          <p class="project-kicker">GORILLA WEBSOCKET + GOROUTINES</p>
+          <h3>Signal Room</h3>
+          <p>A live multi-user chat room with instant message broadcasting, active presence, reconnect handling, and bounded message history.</p>
+          <ul><li>Live WebSocket connections</li><li>Goroutine broadcast hub</li><li>Presence and heartbeats</li></ul>
+          <a class="project-link" data-app="chat" href="https://pfai-signal-chat.onrender.com" target="_blank">Open Signal Room <span>↗</span></a>
+        </div>
+        <div class="project-preview">
+          <div class="browser">
+            <div class="browser-bar"><span><i></i><i></i><i></i></span><small>pfai-signal-chat.onrender.com</small></div>
+            <div class="signal-ui"><div class="signal-side"><b>S</b><span></span><span></span><span></span></div><div class="signal-chat"><small>GENERAL CHANNEL · 3 ONLINE</small><div><i>AN</i><p>Connections should feel instant.</p></div><div><i>GO</i><p>Channels keep everyone in sync.</p></div><form><span>Transmit a message...</span><b>↗</b></form></div></div>
           </div>
-          <div class="signal-wave wave-a"></div><div class="signal-wave wave-b"></div><div class="signal-wave wave-c"></div>
         </div>
-        <div class="project-foot"><span>WEBSOCKETS</span><span>GOROUTINES</span><span>LIVE PRESENCE</span><b>ENTER ↗</b></div>
-      </a>
+      </article>
 
-      <a class="project project-keyline reveal-project" data-cursor="OPEN" data-app="auth" href="https://pfai-keyline.vercel.app" target="_blank">
-        <div class="project-bg"></div>
-        <div class="project-top"><span>7.2 / SECURITY</span><span><i></i> API ONLINE</span></div>
-        <div class="project-title"><small>GIN + JSON WEB TOKENS</small><h3>KEYLINE<br><em>WORKSPACE</em></h3></div>
-        <div class="keyline-stage" data-depth>
-          <div class="secure-ring"><span>AUTHENTICATED</span></div>
-          <div class="key-card">
-            <div><span>ACCESS TOKEN</span><i></i></div>
-            <b>eyJhbGciOiJIUzI1Ni...</b>
-            <small>HS256 · 24H · VERIFIED</small>
+      <article class="project-card keyline reveal">
+        <div class="project-content">
+          <div class="project-meta"><span>02 / SECURE API</span><b><i></i> LIVE</b></div>
+          <p class="project-kicker">GIN + JWT + BCRYPT</p>
+          <h3>Keyline Workspace</h3>
+          <p>A secure personal task workspace with account registration, signed access tokens, protected routes, and isolated user data.</p>
+          <ul><li>Bcrypt password hashing</li><li>JWT authentication middleware</li><li>Complete task CRUD</li></ul>
+          <a class="project-link" data-app="auth" href="https://pfai-keyline.vercel.app" target="_blank">Open Keyline <span>↗</span></a>
+        </div>
+        <div class="project-preview">
+          <div class="browser">
+            <div class="browser-bar"><span><i></i><i></i><i></i></span><small>pfai-keyline.vercel.app</small></div>
+            <div class="keyline-ui"><div class="keyline-title"><small>PRIVATE LEDGER</small><b>Good morning,<br><em>Anas.</em></b></div><div class="task-row"><i></i><span>Complete Go project</span><b>SECURED</b></div><div class="task-row"><i></i><span>Verify API deployment</span><b>SECURED</b></div><div class="token-pill"><i></i> JWT SESSION ACTIVE</div></div>
           </div>
-          <div class="lock"><i></i></div>
         </div>
-        <div class="project-foot"><span>GIN</span><span>JWT + BCRYPT</span><span>SECURE CRUD</span><b>OPEN ↗</b></div>
-      </a>
+      </article>
 
-      <a class="project project-orbit reveal-project" data-cursor="OPEN" data-app="crawler" href="https://pfai-orbit.vercel.app" target="_blank">
-        <div class="project-bg"></div>
-        <div class="project-top"><span>7.3 / CONCURRENCY</span><span><i></i> CRAWLER READY</span></div>
-        <div class="project-title"><small>RATE-LIMITED WORKERS</small><h3>ORBIT<br><em>CRAWLER</em></h3></div>
-        <div class="orbit-stage" data-depth>
-          <div class="radar"><i></i><i></i><i></i><b></b></div>
-          <div class="crawler-node n1"><i></i><span>/docs</span></div>
-          <div class="crawler-node n2"><i></i><span>/api</span></div>
-          <div class="crawler-node n3"><i></i><span>/go</span></div>
-          <div class="crawler-node n4"><i></i><span>/learn</span></div>
-          <svg viewBox="0 0 800 500" aria-hidden="true"><path d="M400 250 L145 130 M400 250 L655 105 M400 250 L675 385 M400 250 L175 400"/></svg>
+      <article class="project-card crawler reveal">
+        <div class="project-content">
+          <div class="project-meta"><span>03 / CONCURRENT SYSTEM</span><b><i></i> LIVE</b></div>
+          <p class="project-kicker">WORKER POOL + RATE LIMITING</p>
+          <h3>Orbit Crawler</h3>
+          <p>A bounded concurrent web crawler that maps public websites while respecting rate limits, timeouts, and network safety rules.</p>
+          <ul><li>Concurrent worker goroutines</li><li>Token-bucket rate limiting</li><li>SSRF and redirect protection</li></ul>
+          <a class="project-link" data-app="crawler" href="https://pfai-orbit.vercel.app" target="_blank">Launch Orbit <span>↗</span></a>
         </div>
-        <div class="project-foot"><span>WORKER POOL</span><span>RATE LIMITING</span><span>SSRF GUARDS</span><b>LAUNCH ↗</b></div>
-      </a>
+        <div class="project-preview">
+          <div class="browser">
+            <div class="browser-bar"><span><i></i><i></i><i></i></span><small>pfai-orbit.vercel.app</small></div>
+            <div class="orbit-ui"><div class="radar"><i></i><i></i><b>GO</b></div><div class="metric-row"><span><small>PAGES</small><b>12</b></span><span><small>SUCCESS</small><b>100%</b></span><span><small>WORKERS</small><b>04</b></span></div></div>
+          </div>
+        </div>
+      </article>
     </section>
 
-    <section id="profile" class="profile">
-      <div class="profile-aura"></div>
-      <div class="profile-top reveal"><p class="eyebrow">DESIGNED + ENGINEERED BY</p><span>ISLAMABAD, PAKISTAN</span></div>
-      <div class="signature reveal">
-        <p>ANAS</p>
-        <div class="signature-line"><i></i><span>Building systems<br>with intent.</span></div>
-      </div>
-      <div class="university reveal">
-        <div class="crest-wrap"><img src="nutech-logo-footer.png" alt="National University of Technology crest"></div>
-        <div><span>STUDENT PROJECT COLLECTION</span><h4>National University<br>of Technology</h4><p>NUTECH · UNIVERSITY FOR INDUSTRY</p></div>
-        <a class="magnetic" href="https://nutech.edu.pk/" target="_blank">NUTECH ↗</a>
+    <section id="about" class="about">
+      <div class="about-card reveal">
+        <img src="nutech-logo-footer.png" alt="NUTECH university crest">
+        <div><p class="eyebrow"><span></span> ABOUT THE DEVELOPER</p><h2>Built by <em>Anas</em><br>at NUTECH.</h2><p>These projects were created for Advanced Go Practice at the National University of Technology, Islamabad. The goal was simple: build functional systems, understand the engineering behind them, and present them clearly.</p><div class="about-links"><a href="https://github.com/ana-momin/PFAI" target="_blank">GitHub repository ↗</a><a href="https://nutech.edu.pk/" target="_blank">NUTECH website ↗</a></div></div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <span>ANAS / ADVANCED GO SYSTEMS</span>
-    <span>BUILT AT NUTECH · 2026</span>
-    <a href="#top">BACK TO TOP ↑</a>
-  </footer>
+  <footer><a class="brand" href="#top"><span>A</span><strong>Anas</strong></a><p>Advanced Go Practice · NUTECH · 2026</p><a href="#top">Back to top ↑</a></footer>
   <script src="app.js"></script>
 </body>
 </html>
